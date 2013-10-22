@@ -33,3 +33,17 @@
 	require CORE_PATH."environment-details.php";
 	
 ?>
+<?php if($new_user): ?>
+
+    <h2>Welcome New User!</h2>
+    <form>
+        <label for='first_name'>First Name<br>
+        <input type='text' name='first_name' id='first_name'>
+
+        <label for='email'>Email<br>
+        <input type='text' name='email' id='email'>
+
+        <input type='submit'>
+    </form>
+
+<?php endif; ?>
