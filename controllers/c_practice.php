@@ -9,6 +9,12 @@
 	DB::instance(DB_NAME)->insert('users',$new_user);
 } */
 
-$q = "SELECT" email  
-	FROM 
+$q = "INSERT INTO users SET 
+	    first_name = 'Sam', 
+	    last_name = 'Seaborn',
+	    email = 'seaborn@trying.gov'";
+
+
+echo DB::instance(DB_NAME)->query($q);
+
 ?>
