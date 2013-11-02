@@ -44,14 +44,15 @@
                         <li><a href='/posts/'>View Posts</a></li>
                         <li><a href='/posts/users'>Follow Users</a></li>
                         <li><a href='/users/logout'>Logout</a></li>
+                        <li>You are logged in as <?=$user->first_name?> <?=$user->last_name?></li>
                 <?php else: ?>
                         <li><a href='/users/signup'>Sign Up</a></li>
                         <li><a href='/users/login'>Log In</a></li>
                 <?php endif; ?>
                 
-                <?php if($user): ?>
-                <li>You are logged in as <?=$user->first_name?> <?=$user->last_name?><br></li>
-                <?php endif; ?>
+                <!-- <?php if($user): ?>
+                <li>You are logged in as <?=$user->first_name?> <?=$user->last_name?></li>
+                <?php endif; ?> -->
                 <li class="dropdown">
                   <a href="#" class="dropdown-toggle" data-toggle="dropdown">Plus 1's <b class="caret"></b></a>
                   <ul class="dropdown-menu">
