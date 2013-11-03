@@ -1,7 +1,7 @@
 <!-- Carousel 
 ================================================== -->
 <div class="item active">
-  <img src="/images/sign.jpg" data-src="/images/sign.jpg" alt="Cup of Joe">
+  <img src="/images/sign.jpg" data-src="/images/sign.jpg" alt="Cup of Joe" width="900px" height="600px">
   <div class="container">
     <!-- <div class="carousel-caption-background"> -->
             <div class="carousel-caption">
