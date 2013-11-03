@@ -66,12 +66,12 @@
 		  </h2>
           <p class="lead">You know what they say about breakfast: it's the most important meal of the day.  So what did you eat for breakfast?  Log in, upload a photo, or</p>
         </div>
-        <div class="col-md-5">
+        <!-- <div class="col-md-5">
           <img class="featurette-image img-responsive" src="data:image/png;base64," data-src="holder.js/500x500/auto" alt="Generic placeholder image">
-        </div>
+        </div> -->
       </div>
 
-      <hr class="featurette-divider">
+      <!-- <hr class="featurette-divider"> -->
 
       <!-- /END THE FEATURETTES -->
 
