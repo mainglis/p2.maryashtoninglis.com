@@ -52,15 +52,15 @@
 
       <!-- START THE FEATURETTES -->
 
-      <hr class="featurette-divider">
+      <!-- <hr class="featurette-divider"> -->
 
       <div class="row featurette">
         <div class="col-md-7">
           <h2 class="featurette-heading">Welcome to FriedEggs
 	          		<?php if($user): ?>
-		        		Hello <?=$user->first_name;?>
+		        		<?=$user->first_name;?>
 					<?php else: ?>
-			        		Welcome Stranger
+			        	Stranger
 					<?php endif; ?>! 
 				<span class="text-muted">Start sharing your mornings.</span>
 		  </h2>
