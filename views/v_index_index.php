@@ -48,25 +48,7 @@
     <!-- Marketing messaging and featurettes
     ================================================== -->
     <!-- Wrap the rest of the page in another container to center all the content. -->
-
-    <div class="container marketing">
-
-      <!-- Three columns of text below the carousel -->
-      <div class="row">
-        <div class="col-lg-4">
-          <img class="img-circle" src="data:image/png;base64," data-src="holder.js/140x140" alt="Generic placeholder image">
-          	<h2>
-	          	<?php if($user): ?>
-	        		Hello <?=$user->first_name;?>
-				<?php else: ?>
-		        		Welcome Stranger!
-				<?php endif; ?>
-			</h2>
-          <p>Donec sed odio dui. Etiam porta sem malesuada magna mollis euismod. Nullam id dolor id nibh ultricies vehicula ut id elit. Morbi leo risus, porta ac consectetur ac, vestibulum at eros. Praesent commodo cursus magna.</p>
-          <p><a class="btn btn-default" href="#">View details &raquo;</a></p>
-        </div><!-- /.col-lg-4 -->
-      </div><!-- /.row -->
-
+    <div class="container">
 
       <!-- START THE FEATURETTES -->
 
@@ -74,7 +56,14 @@
 
       <div class="row featurette">
         <div class="col-md-7">
-          <h2 class="featurette-heading">Welcome to FriedEggs! <span class="text-muted">Start sharing your mornings.</span></h2>
+          <h2 class="featurette-heading">Welcome to FriedEggs
+	          		<?php if($user): ?>
+		        		Hello <?=$user->first_name;?>
+					<?php else: ?>
+			        		Welcome Stranger
+					<?php endif; ?>! 
+				<span class="text-muted">Start sharing your mornings.</span>
+		  </h2>
           <p class="lead">You know what they say about breakfast: it's the most important meal of the day.  So what did you eat for breakfast?  Log in, upload a photo, or</p>
         </div>
         <div class="col-md-5">
