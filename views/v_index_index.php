@@ -55,7 +55,7 @@
       <!-- <hr class="featurette-divider"> -->
 
       <div class="row featurette">
-        <div class="col-md-7">
+        <div class="col-md-12">
           <h2 class="featurette-heading">Welcome to FriedEggs
 	          		<?php if($user): ?>
 		        		<?=$user->first_name;?>
