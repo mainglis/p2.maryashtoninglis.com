@@ -1,25 +1,28 @@
 <!DOCTYPE html>
 <html>
-<head>
+  <head>
         <title><?php if(isset($title)) echo $title; ?></title>
-
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />                                      
+        
         <!-- JS/CSS File we want on every page -->
-        <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>                                                                                    
         <link rel="stylesheet" href="/css/carousel.css" type="text/css">
+        <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>                                                                                   
         <script src="/js/bootstrap.min.js"></script>
         <!-- <script src="/js/carousel.js"></script> -->
+
+<!-- Consider deleting this script below -->
 <script>
   $(document).ready(function(){
     $('.carousel').carousel();
     interval: 2000
   });
 </script>
+
         <!-- Bootstrap core CSS -->
         <link href="/css/bootstrap.css" rel="stylesheet">
         <!-- Controller Specific JS/CSS -->
         <?php if(isset($client_files_head)) echo $client_files_head; ?>  
-</head>
+  </head>
 <!-- NAVBAR
 ================================================== -->
   <body>
@@ -58,7 +61,6 @@
                   <ul class="dropdown-menu">
                     <li><a href="/users/profile">Edit Profile</a></li>
                     <li><a href="/link">2nd Plus 1</a></li>
-                    <li><a href="#">Something else here</a></li>
                     <li class="divider"></li>
                     <li class="dropdown-header">Nav header</li>
                     <li><a href="#">Separated link</a></li>
