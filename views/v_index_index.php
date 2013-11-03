@@ -1,5 +1,18 @@
 <!-- Carousel 
 ================================================== -->
+<div class="item active">
+  <img src="/images/sign.jpg" data-src="/images/sign.jpg" alt="Cup of Joe">
+  <div class="container">
+    <!-- <div class="carousel-caption-background"> -->
+            <div class="carousel-caption">
+              <h1>Breakfast table talk.</h1>
+              <p>What'd you eat for breakfast? Tell all, show all.</p>
+              <p><a class="btn btn-large btn-primary" href="/users/signup">Sign up today</a></p>
+            </div>
+        <!-- </div> -->
+  </div>
+</div>
+
 <div id="myCarousel" class="carousel slide">
 <!-- Indicators -->
 <ol class="carousel-indicators">
