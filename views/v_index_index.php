@@ -14,7 +14,7 @@
     <!-- <div class="carousel-caption-background"> -->
             <div class="carousel-caption">
               <h1>Breakfast table talk.</h1>
-              <p>What'd you eat for breakfast? Tell all, show all.</p>
+              <p>What'd you eat for breakfast? Share it here.</p>
               <p><a class="btn btn-large btn-primary" href="/users/signup">Sign up today</a></p>
             </div>
         <!-- </div> -->
@@ -31,12 +31,12 @@
   </div>
 </div>
 <div class="item">
-  <img src="/images/mug.jpg" data-src="/images/mug.jpg" alt="Third slide">
+  <img src="/images/plate.jpg" data-src="/images/plate.jpg" alt="Third slide">
   <div class="container">
     <div class="carousel-caption">
       <h1>One more for good measure.</h1>
       <p>More text here.</p>
-      <p><a class="btn btn-large btn-primary" href="#">Browse gallery</a></p>
+      <p><a class="btn btn-large btn-primary" href="#">Sign up now</a></p>
     </div>
   </div>
 </div>
@@ -64,7 +64,7 @@
 					<?php endif; ?>! 
 				<span class="text-muted">Start sharing your mornings.</span>
 		  </h2>
-          <p class="lead">You know what they say about breakfast: it's the most important meal of the day.  So what did you eat for breakfast?  Log in, upload a photo, or</p>
+          <p class="lead">You know what they say about breakfast: it's the most important meal of the day.  So what are you eating? Log in, swap stories and photos, and start your day on a good note!</p>
         </div>
         <!-- <div class="col-md-5">
           <img class="featurette-image img-responsive" src="data:image/png;base64," data-src="holder.js/500x500/auto" alt="Generic placeholder image">

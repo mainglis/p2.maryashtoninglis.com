@@ -1,7 +1,6 @@
 <div class="container">
-<h1>This is the profile of <?=$user->first_name?></h1>
-<p>If you'd like to edit your profile, click <a href="users/profile/edit">here</a></p>
-<h1>Editing profile for <?=$user->first_name?></h1>
+<?php if(isset($user_name)): ?>
+        <h1>Editing profile for <?=$user->first_name?></h1>
         <form method="POST" action='/users/p_profile'>
                     
             Location <i>(City, State)</i><br/>
@@ -19,4 +18,10 @@
             <input type='submit' value='Submit Profile' onclick="submit()";>>
 
         </form>
+<?php else: ?>
+        <h1>No user has been specified</h1>
+<?php endif; ?>
+
+
+
 </div>

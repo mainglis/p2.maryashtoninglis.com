@@ -28,7 +28,6 @@
   <body>
     <div class="navbar-wrapper">
       <div class="container">
-
         <div class="navbar navbar-inverse navbar-static-top">
           <div class="container">
             <div class="navbar-header">
@@ -60,7 +59,7 @@
                 <li class="dropdown">
                   <a href="#" class="dropdown-toggle" data-toggle="dropdown">Plus 1's <b class="caret"></b></a>
                   <ul class="dropdown-menu">
-                    <li><a href="/users/profile">Edit Profile</a></li>
+                    <li><a href="/users/profile/edit">Edit Profile</a></li>
                     <li><a href="/link">2nd Plus 1</a></li>
                     <li class="divider"></li>
                     <li class="dropdown-header">Nav header</li>
@@ -72,19 +71,19 @@
             </div>
           </div>
         </div>
-
       </div>
     </div>
+  </div>
 
         <?php if($user): ?>
                 You are logged in as <?=$user->first_name?> <?=$user->last_name?><br>
-        <?php endif; ?>
+        <?php endif; ?> 
         
         <br><br>
         
         <?php if(isset($content)) echo $content; ?>
 
         <?php if(isset($client_files_body)) echo $client_files_body; ?>
-
+ 
 </body>
 </html>

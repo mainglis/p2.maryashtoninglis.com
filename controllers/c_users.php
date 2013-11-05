@@ -122,23 +122,45 @@ class users_controller extends base_controller {
         /*-------------------------------------------------------------------------------------------------
         
         -------------------------------------------------------------------------------------------------*/
-    public function profile($user_name = NULL) {
-                
-                # Only logged in users are allowed...
-                if(!$this->user) {
-                        die('Members only. <a href="/users/login">Login</a>');
-                }
-                
-                # Set up the View
-                $this->template->content = View::instance('v_users_profile');
-                $this->template->title   = "Profile";
-                                
-                # Pass the data to the View
-                $this->template->content->user_name = $user_name;
-                
-                # Display the view
-                echo $this->template;
-                                
-    }
 
+    public function profile($user_name = NULL) {
+                    
+                    # Only logged in users are allowed...
+                    if(!$this->user) {
+                            Router::redirect('/users/login');
+                    }
+                    
+                    # Set up the View
+                    $this->template->content = View::instance('v_users_profile');
+                    $this->template->title   = "Profile of".$this->user->first_name;
+                                    
+                    # Pass the data to the View
+                    $this->template->content->user_name = $user_name;
+                    
+                    # Display the view
+                    echo $this->template;
+                                    
+        }
+/* Creating a new function for editing profiles ---------------------------------- */
+
+public function edit($user_name = NULL) {
+                    
+                    # Only logged in users are allowed...
+                    if(!$this->user) {
+                            Router::redirect('/users/login');
+                    }
+                    
+                    # Set up the View
+                    $this->template->content = View::instance('v_users_profile');
+                    $this->template->title   = "Profile of".$this->user->first_name;
+                                    
+                    # Pass the data to the View
+                    $this->template->content->user_name = $user_name;
+                    
+                    # Display the view
+                    echo $this->template;
+                                    
+        }
+
+    
 } # end of the class

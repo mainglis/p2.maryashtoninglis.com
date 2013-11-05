@@ -1,3 +1,4 @@
+<div class="container">
 <h2>Sign Up</h2>
 
 <form method='POST' action='/users/p_signup'>
@@ -11,3 +12,4 @@
         
 
 </form>
+</div>
