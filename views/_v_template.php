@@ -41,30 +41,40 @@
             <div class="navbar-collapse collapse">
               <ul class="nav navbar-nav">
                 <li class="active"><a href='/'>Home</a></li>
-                 <?php if($user): ?>
+                  <?php if($user): ?>
                         <li><a href='/posts/add'>Add Post</a></li>
                         <li><a href='/posts/'>View Posts</a></li>
-                        <li><a href='/posts/users'>Follow Users</a></li>
-                        <li><a href='/users/logout'>Logout</a></li>
-                        <li>You are logged in as <?=$user->first_name?> <?=$user->last_name?></li>
-                                <?php else: ?>
-                                        <li><a href='/users/signup'>Sign Up</a></li>
-                                        <li><a href='/users/login'>Log In</a></li>
-                                <?php endif; ?>
+                        <li><a href='/posts/users'>Follow Other Users</a></li>
+                        <li class="dropdown">
+                          <a href="#" class="dropdown-toggle" data-toggle="dropdown">You are logged in as <?=$user->first_name?> <?=$user->last_name?> <b class="caret"></b></a>
+                          <ul class="dropdown-menu">
+                            <li><a href="/users/profile">View Profile</a></li>
+                            <li><a href="/users/logout">Logout</a></li>
+                            <li class="divider"></li>
+                           <!--  <li class="dropdown-header">Nav header</li>
+                            <li><a href="#">Separated link</a></li>
+                            <li><a href="#">One more separated link</a></li> -->
+                          </ul>
+                        </li>
+                       <!--  <li><a href='/users/profile'>You are logged in as <?=$user->first_name?> <?=$user->last_name?></a></li> -->
+                  <?php else: ?>
+                        <li><a href='/users/signup'>Sign Up</a></li>
+                        <li><a href='/users/login'>Log In</a></li>
+                  <?php endif; ?>
                 
-                                <!-- <?php if($user): ?>
-                                <li>You are logged in as <?=$user->first_name?> <?=$user->last_name?></li>
-                                <?php endif; ?> -->
+                  <!-- <?php if($user): ?>
+                  <li>You are logged in as <?=$user->first_name?> <?=$user->last_name?></li>
+                  <?php endif; ?> -->
                                 
-                <li class="dropdown">
-                  <a href="#" class="dropdown-toggle" data-toggle="dropdown">Plus 1's <b class="caret"></b></a>
+                <!-- <li class="dropdown">
+                  <a href="#" class="dropdown-toggle" data-toggle="dropdown">You are logged in as <?=$user->first_name?> <?=$user->last_name?> <b class="caret"></b></a>
                   <ul class="dropdown-menu">
-                    <li><a href="/users/profile/edit">Edit Profile</a></li>
-                    <li><a href="/link">2nd Plus 1</a></li>
-                    <li class="divider"></li>
-                    <li class="dropdown-header">Nav header</li>
+                    <li><a href="/users/profile">View Profile</a></li>
+                    <li><a href="/users/logout">Logout</a></li>
+                    <li class="divider"></li> -->
+                   <!--  <li class="dropdown-header">Nav header</li>
                     <li><a href="#">Separated link</a></li>
-                    <li><a href="#">One more separated link</a></li>
+                    <li><a href="#">One more separated link</a></li> -->
                   </ul>
                 </li>
               </ul>
@@ -75,10 +85,10 @@
     </div>
   </div>
 
-        <?php if($user): ?>
+       <!--  <?php if($user): ?>
                 You are logged in as <?=$user->first_name?> <?=$user->last_name?><br>
         <?php endif; ?> 
-        
+         -->
         <br><br>
         
         <?php if(isset($content)) echo $content; ?>

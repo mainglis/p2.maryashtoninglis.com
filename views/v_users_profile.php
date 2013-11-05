@@ -1,22 +1,32 @@
 <div class="container">
-<h1>This is the profile of <?=$user->first_name?></h1>
-<p>If you'd like to edit your profile, click <a href="users/profile/edit">here</a></p>
-<h1>Editing profile for <?=$user->first_name?></h1>
-        <form method="POST" action='/users/p_profile'>
-                    
-            Location <i>(City, State)</i><br/>
-            <input type='varchar' name='location' maxlength="25">
-            <br/><br/>
+<!-- <h3>Displaying profile for <?=$user->first_name?></h3>
 
-            Age<br/>
-            <input type='int' name='age'>
-            <br/><br/>
+<p>If you'd like to edit your profile, click <a href="profile/complete">here</a></p>
+ -->
 
-            Favorite Breakfast <i> (255 character max)</i><br/>
-            <input type='text' name='favorite_breakfast' maxlength="255">
-            <br/><br/>
+    <img id="avatar" src="/uploads/avatars/<?=$profile[0]['img_url']?>" height="100" width="100" alt="avatar"/>&nbsp;&nbsp;
 
-            <input type='submit' value='Submit Profile' onclick="submit()";>>
+    <div id="profile_info">
+        <h1>
+            <?=$profile[0]['first_name']?>
+                    <?=$profile[0]['last_name']?>
+        </h1>
 
-        </form>
+        <article id="profile_article">
+        
+             <p>Age: <?=($profile[0]['age']);?>
+            </p>
+
+            <p>Location: <?=($profile[0]['location']);?>
+            </p>
+
+            <p>Favorite Breakfast: <?=($profile[0]['gender']);?>
+            </p>
+            
+            <a id="edit_profile" href='profile/complete'>Edit Profile</a>
+            
+        </article>
+    </div>
+       
+
 </div>
