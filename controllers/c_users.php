@@ -137,7 +137,7 @@ class users_controller extends base_controller {
                $this->template->title   = "Profile of ".$this->user->first_name;
 
                # Build the query for users and profiles
-               $q = 'SELECT first_name, last_name, age, location, favorite_breakfast
+               $q = 'SELECT first_name, last_name, age, location, favorite_breakfast, img_url
                                FROM users
                                WHERE users.user_id = '.$this->user->user_id;
 
@@ -151,7 +151,10 @@ class users_controller extends base_controller {
                # Render template
                echo $this->template;
        }
-/* Creating capacity to edit profiles ---------------------------------- */
+ /*-------------------------------------------------------------------------------------------------
+        Creating capacity to edit profiles
+ -------------------------------------------------------------------------------------------------*/
+
 
     public function p_profile($message = NULL, $user_id = NULL) {
         
@@ -170,7 +173,7 @@ class users_controller extends base_controller {
         //         if(!empty($_POST['age'])) {
         //                 if(empty($_POST['location'])) {                
         //                         if(empty($_POST['favorite_breakfast'])) {
-        //                             // if(empty($_POST['about'])) {
+        //                 
                                     
         //                                     # Sanitize the user entered data to prevent any funny-business (re: SQL Injection Attacks)
         //                                                 $_POST = DB::instance(DB_NAME)->sanitize($_POST);

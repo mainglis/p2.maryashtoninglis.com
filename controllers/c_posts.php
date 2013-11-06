@@ -5,6 +5,8 @@ class posts_controller extends base_controller {
         /*-------------------------------------------------------------------------------------------------
         
         -------------------------------------------------------------------------------------------------*/
+       
+
         public function __construct() {
                 
                 # Make sure the base controller construct gets called
@@ -58,6 +60,7 @@ class posts_controller extends base_controller {
                 
                 # Set up query
                 $q = 'SELECT 
+                            posts.img_url,
                             posts.content,
                             posts.created,
                             posts.user_id AS post_user_id,
@@ -152,7 +155,55 @@ class posts_controller extends base_controller {
             Router::redirect("/posts/users");
         
         }
+/*-------------------------------------------------------------------------------------------------
+        Adding like funcationality
+---------------------------------------------------------------------------------*/
+        public function fb_like() {
+            if (is_single()) { ?>
+                <iframe src="http://www.facebook.com/plugins/like.php?href=<?php echo urlencode(get_permalink($post->ID)); ?>&amp;layout=standard&amp;show_faces=false&amp;width=450&amp;action=like&amp;colorscheme=light" scrolling="no" frameborder="0" allowTransparency="true" style="border:none; overflow:hidden; width:450px; height:60px;"></iframe>
+
+                <?php }
+        }
+        // add_action('thesis_hook_after_post','fb_like');
         
-        
+        public function test() {
+                echo "This is a test page";
+            }
+
+    public function p_upload() {
+            
+                    # Upload an image file into the uploads/avatars folder
+                    $img = @Upload::upload($_FILES, "/uploads/avatars/", 
+                    array("jpg", "jpeg", "gif", "png", "JPG", "JPEG", "GIF", "PNG"), $_FILES['uploads']['name']);
+                    
+                    # Check if image is a valid type, if so, insert image into db   
+            if($img != 'Invalid file type.') {
+                         
+                            # Getting the file name, without the extension
+                            $file = $_FILES['uploads']['name'];          
+                            $info = pathinfo($file);
+                            
+                            # Add the extension again after the file name to match how the file is uploaded        
+                            $file_name =  $file.'.'.$info['extension'];        
+                     
+                            # Set the name of the image file to be the user_id.jpg
+                            $img_url = $file_name; 
+                                    
+                            # Prepare the image_url for upadate into users table
+                            $data = array("img_url" => $img_url);
+                    
+                            # Insert the image url into the database
+                            DB::instance(DB_NAME)->update('posts', $data, "WHERE user_id = '".$this->user->user_id."'");
+            
+                            # Send them to the login page
+                            Router::redirect("/posts");
+                    
+                    }
+                    else {
+                            
+                            Router::redirect("/posts/filetype_error"); 
+            } 
+                    
+            }
         
 } # eoc

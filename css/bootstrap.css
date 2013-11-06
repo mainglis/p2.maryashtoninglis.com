@@ -171,6 +171,7 @@ html input[type="button"],
 input[type="reset"],
 input[type="submit"] {
   cursor: pointer;
+  margin-top: 5px;
   -webkit-appearance: button;
 }
 
@@ -1825,7 +1826,7 @@ textarea.input-sm {
 }
 
 .input-lg {
-  height: 45px;
+  height: 55px;
   padding: 10px 16px;
   font-size: 18px;
   line-height: 1.33;

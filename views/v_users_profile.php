@@ -1,11 +1,7 @@
 <div class="container">
-<!-- <h3>Displaying profile for <?=$user->first_name?></h3>
 
-<p>If you'd like to edit your profile, click <a href="profile/complete">here</a></p>
- -->
-
-    <img id="eggs" src="/images/fried-egg-md.png"<?=$profile[0]['img_url']?>" height="100" width="100" alt="egg"/>&nbsp;&nbsp;
-
+ <img id="avatar" src="/uploads/avatars/<?=$profile[0]['img_url']?>" alt="avatar" height="100" width="100"/>&nbsp;&nbsp;
+    
     <div id="profile_info">
         <h1>
             <?=$profile[0]['first_name']?>
@@ -22,6 +18,9 @@
 
             <p>Favorite Breakfast: <?=($profile[0]['favorite_breakfast']);?>
             </p>
+
+            <!-- <p>Profile image: <?=($profile[0]['img_url']);?>
+            </p> -->
             
             <a id="edit_profile" href='/users/p-profile'>Edit Profile</a>
             
