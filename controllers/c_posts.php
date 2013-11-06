@@ -165,11 +165,12 @@ class posts_controller extends base_controller {
                 <?php }
         }
         // add_action('thesis_hook_after_post','fb_like');
-        
+
+/*--------------------------------------------------------------------------------------------- */
         public function test() {
                 echo "This is a test page";
             }
-
+/*--------------------------------------------------------------------------------------------- */
     public function p_upload() {
             
                     # Upload an image file into the uploads/avatars folder
@@ -201,9 +202,10 @@ class posts_controller extends base_controller {
                     }
                     else {
                             
-                            Router::redirect("/posts/filetype_error"); 
+                            Router::redirect("/users/p_profile/filetype_error"); 
             } 
                     
             }
-        
+/*--------------------------------------------------------------------------------------------- */
+// public function view()        
 } # eoc

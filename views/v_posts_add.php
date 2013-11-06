@@ -11,7 +11,7 @@
 
 </form>
 <form method='POST' enctype="multipart/form-data" action='/posts/p_upload/'>
-                    <h3>Upload photo of your breakfast:</h3><p id="filetypes">(only jpg, jpeg, gif, or png file types allowed)</p>
+                    <h3>Upload photo of your breakfast:</h4><p id="filetypes">(only jpg, jpeg, gif, or png file types allowed)</p>
                     
                             <input type='file' name='uploads'></br>
                             <input type='submit'>
