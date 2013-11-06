@@ -34,8 +34,8 @@
   <img src="/images/plate.jpg" data-src="/images/plate.jpg" alt="Third slide">
   <div class="container">
     <div class="carousel-caption">
-      <h1>One more for good measure.</h1>
-      <p>More text here.</p>
+      <h1>One more plate for good measure.</h1>
+      <p>Try it out!</p>
       <p><a class="btn btn-large btn-primary" href="#">Sign up now</a></p>
     </div>
   </div>
@@ -61,7 +61,7 @@
 		        		<?=$user->first_name;?>
 					<?php else: ?>
 			        	Stranger
-					<?php endif; ?>! 
+              <?php endif; ?>! 
 				<span class="text-muted">Start sharing your mornings.</span>
 		  </h2>
           <p class="lead">You know what they say about breakfast: it's the most important meal of the day.  So what are you eating? Log in, swap stories and photos, and start your day on a good note!</p>
@@ -79,7 +79,7 @@
       <!-- FOOTER -->
       <footer>
         <p class="pull-right"><a href="#">Back to top</a></p>
-        <p>&copy; 2013 Mash, Inc. &middot; <a href="#">Privacy</a> &middot; <a href="#">Terms</a></p>
+        <p>&copy; 2013 Mash, Inc. &middot; Plus 1 Features are Editing Profile Information and Uploading Breakfast Images</p>
       </footer>
 
     </div><!-- /.container -->
