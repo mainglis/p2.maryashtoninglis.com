@@ -78,8 +78,8 @@
 
       <!-- FOOTER -->
       <footer>
-        <p class="pull-right"><a href="#">Back to top</a></p>
-        <p>&copy; 2013 Mash, Inc. &middot; Plus 1 Features are Editing Profile Information and Uploading Breakfast Images</p>
+        <p class="pull-right">Plus 1 Features are Editing Profile Information and Uploading Breakfast Images</p>
+        <p>&copy; 2013 Mash, Inc. &middot; </p>
       </footer>
 
     </div><!-- /.container -->
