@@ -123,7 +123,7 @@ class users_controller extends base_controller {
         
         -------------------------------------------------------------------------------------------------*/
 
-public function profile() {
+    public function profile() {
 
                # If user is blank, they're not logged in; redirect them to the home page
                if(!$this->user) {
@@ -137,7 +137,7 @@ public function profile() {
                $this->template->title   = "Profile of ".$this->user->first_name;
 
                # Build the query for users and profiles
-               $q = 'SELECT first_name, last_name
+               $q = 'SELECT first_name, last_name, age, location, favorite_breakfast
                                FROM users
                                WHERE users.user_id = '.$this->user->user_id;
 
@@ -153,18 +153,18 @@ public function profile() {
        }
 /* Creating capacity to edit profiles ---------------------------------- */
 
-public function p_profile($message = NULL, $user_id = NULL) {
+    public function p_profile($message = NULL, $user_id = NULL) {
         
-        //         # If user is blank, they're not logged in; redirect them to the login page
-        //         if(!$this->user) {
-        //                 Router::redirect('/users/login');
-        //         }
-                
-        //         # Setup view
-        //         $this->template->content = View::instance('v_profile_complete');
-        //         $this->template->title   = "Profile of ".$this->user->first_name;
-                
-        //         $this->template->content->message = $message;        
+                 # If user is blank, they're not logged in; redirect them to the login page
+                 if(!$this->user) {
+                         Router::redirect('/users/login');
+                 }
+              
+                 # Setup view
+                 $this->template->content = View::instance('v_profile_complete');
+                 $this->template->title   = "Profile of ".$this->user->first_name;
+              
+                 $this->template->content->message = $message;        
                         
         //         # Don't allow all profile fields to be blank without at least saying something to the user
         //         if(!empty($_POST['age'])) {
@@ -177,7 +177,7 @@ public function p_profile($message = NULL, $user_id = NULL) {
 
         //                                                 # Insert this proile into the database
         //                                                 $q = DB::instance(DB_NAME)->update('users', $_POST, "WHERE user_id = '".$this->user->user_id."'");                                    
-        //                                         Router::redirect('/');
+        //                                         Router::redirect('/users/p_profile/blank');
         //                             }
         //                         }
         //                 }
@@ -199,6 +199,43 @@ public function p_profile($message = NULL, $user_id = NULL) {
                 # Render template
                 echo $this->template;        
         }
+/* Creating capacity upload images ---------------------------------- */    
+
+    public function p_upload() {
+            
+                    # Upload an image file into the uploads/avatars folder
+                    $img = @Upload::upload($_FILES, "/uploads/avatars/", 
+                    array("jpg", "jpeg", "gif", "png", "JPG", "JPEG", "GIF", "PNG"), $_FILES['uploads']['name']);
+                    
+                    # Check if image is a valid type, if so, insert image into db   
+            if($img != 'Invalid file type.') {
+                         
+                            # Getting the file name, without the extension
+                            $file = $_FILES['uploads']['name'];          
+                            $info = pathinfo($file);
+                            
+                            # Add the extension again after the file name to match how the file is uploaded        
+                            $file_name =  $file.'.'.$info['extension'];        
+                     
+                            # Set the name of the image file to be the user_id.jpg
+                            $img_url = $file_name; 
+                                    
+                            # Prepare the image_url for upadate into users table
+                            $data = array("img_url" => $img_url);
+                    
+                            # Insert the image url into the database
+                            DB::instance(DB_NAME)->update('users', $data, "WHERE user_id = '".$this->user->user_id."'");
+            
+                            # Send them to the login page
+                            Router::redirect("/users/profile/");
+                    
+                    }
+                    else {
+                            
+                            Router::redirect("/users/p_profile/filetype_error"); 
+            } 
+                    
+            }
 
     
 } # end of the class

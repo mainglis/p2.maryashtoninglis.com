@@ -12,7 +12,7 @@ class posts_controller extends base_controller {
                 
                 # Only let logged in users access the methods in this controller
                 if(!$this->user) {
-                        die("Members only");
+                        Router::redirect("/users/login");
                 }
                 
         } 
@@ -24,6 +24,7 @@ class posts_controller extends base_controller {
         public function add() {
                 
                 $this->template->content = View::instance("v_posts_add");
+                $this->template->title   = "Add Posts";
                 
                 echo $this->template;
                 
@@ -53,6 +54,7 @@ class posts_controller extends base_controller {
                 
                 # Set up view
                 $this->template->content = View::instance('v_posts_index');
+                $this->template->title   = "Posts";
                 
                 # Set up query
                 $q = 'SELECT 

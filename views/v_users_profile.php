@@ -4,7 +4,7 @@
 <p>If you'd like to edit your profile, click <a href="profile/complete">here</a></p>
  -->
 
-    <img id="avatar" src="/uploads/avatars/<?=$profile[0]['img_url']?>" height="100" width="100" alt="avatar"/>&nbsp;&nbsp;
+    <img id="eggs" src="/images/fried-egg-md.png"<?=$profile[0]['img_url']?>" height="100" width="100" alt="egg"/>&nbsp;&nbsp;
 
     <div id="profile_info">
         <h1>
@@ -20,10 +20,10 @@
             <p>Location: <?=($profile[0]['location']);?>
             </p>
 
-            <p>Favorite Breakfast: <?=($profile[0]['gender']);?>
+            <p>Favorite Breakfast: <?=($profile[0]['favorite_breakfast']);?>
             </p>
             
-            <a id="edit_profile" href='profile/complete'>Edit Profile</a>
+            <a id="edit_profile" href='/users/p-profile'>Edit Profile</a>
             
         </article>
     </div>
